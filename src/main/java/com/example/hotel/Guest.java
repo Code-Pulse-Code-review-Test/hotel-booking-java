@@ -6,6 +6,7 @@ public class Guest {
     public String phone;
     public String email;
     public boolean member;
+    public String address;
 
     public Guest(String name, String nic, String phone, String email, boolean member) {
         this.name = name;
