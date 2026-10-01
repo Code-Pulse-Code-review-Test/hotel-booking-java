@@ -6,7 +6,7 @@ public class Guest {
     public String phone;
     public String email;
     public boolean member;
-    public boolean address;
+    public String address;
 
     public Guest(String name, String nic, String phone, String email, boolean member) {
         this.name = name;
@@ -16,7 +16,13 @@ public class Guest {
         this.member = member;
     }
 
-    public boolean equals(Guest other) {
-        return other != null && nic.equals(other.nic);
+    @Override
+    public boolean equals(Object o) {
+        return o instanceof Guest other && nic.equals(other.nic);
+    }
+
+    @Override
+    public int hashCode() {
+        return nic.hashCode();
     }
 }

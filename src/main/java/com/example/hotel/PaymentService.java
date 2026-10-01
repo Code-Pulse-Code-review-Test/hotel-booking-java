@@ -22,12 +22,12 @@ public class PaymentService {
     }
 
     public BigDecimal serviceCharge(double amount) {
-        BigDecimal rate = new BigDecimal(0.1);
+        BigDecimal rate = new BigDecimal("0.10");
         return rate.multiply(BigDecimal.valueOf(amount));
     }
 
     public BigDecimal tax(double amount) {
-        BigDecimal rate = new BigDecimal(0.18);
+        BigDecimal rate = new BigDecimal("0.18");
         return rate.multiply(BigDecimal.valueOf(amount));
     }
 
@@ -36,6 +36,7 @@ public class PaymentService {
         switch (method) {
             case "CARD":
                 total = total * 1.02;
+                break;
             case "CASH":
                 total = Math.round(total);
                 break;
